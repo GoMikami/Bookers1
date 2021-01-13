@@ -1,9 +1,14 @@
 <body>
-  <p>
+  <p id="notice">Book was successfully created.</p>
+    <p>
     <strong>Title:</strong>
-  
+    <%= @book.title %>
+    </p>
+    <p>
     <strong>Body:</strong>
-  </p>
-  <a class="edit" href="/">Edit</a>
-  <a class="back" href="/books">Back</a>
+    <%= @book.body %>
+    </p>
+ <%= link_to "Edit", edit_book_path(@book) %>
+ |
+ <%= link_to "Back", book_path(@book) %>
 </body>
