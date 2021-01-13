@@ -12,14 +12,6 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
-  def new
-  end
-
-  def index
-    @books = Book.all
-    @book = Book.new
-  end
-
   def create
     @book = Book.new(book_params)
     if @book.save
@@ -52,9 +44,12 @@ class BooksController < ApplicationController
     else
       render :new
     end
+  end
 
   private
   
   def book_params
     params.permit(:title, :body)
   end
+  
+end

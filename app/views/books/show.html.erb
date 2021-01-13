@@ -7,11 +7,12 @@
   <p>
     <strong>Title:</strong>
     <%= @book.title %>
-  
+  </p>
+  <p>
     <strong>Body:</strong>
     <%= @book.body %>
   </p>
-  <%= link_to "Show",book_path(@book) %>
+  <%= link_to "Edit", book_path(@book) %>
   |
 	<%= link_to "Back", books_path(@books) %>
 
