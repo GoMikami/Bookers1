@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.all
-    @book_new = Book.new
+    @book = Book.new
   end
 
   def show
@@ -13,12 +13,12 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book_new = Book.new(book_params)
-    if @book_new.save
+    @book = Book.new(book_params)
+    @books = Book.all
+    if @book.save
       flash[:notice] = "Book was successfully created."
-      redirect_to book_path(@book_new)
+      redirect_to book_path(@book)
     else
-      @books = Book.all
       render :index
     end
   end
@@ -50,7 +50,7 @@ class BooksController < ApplicationController
   private
   
   def book_params
-    params.permit(:title, :body)
+    params.require(:book).permit(:title, :body)
   end
   
 end
