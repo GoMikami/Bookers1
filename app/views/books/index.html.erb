@@ -1,4 +1,4 @@
-
+<body>
     <% if flash[:notice] %>
         <p class="notice"><%= flash[:notice] %></p>
     <% end %>
@@ -28,13 +28,10 @@
 
     <h2>New book</h2>
     <%= form_with model:@book, local:true do |f| %>
-        <div id="error_explanation"><!-- エラーメッセージ入れられない-->
+        <div class="error_explanation"><!-- エラーメッセージ入れられない-->
         <% if @book.errors.any? %>
         <h2><%= @book.errors.count %>errors prohibited this book from being saved:</h2>
-    	<ul>
-       		<% @book.errors.full_messages.each do |message| %>
-        	<li><%= message %></li>
-    	</ul>
+        <ul><% @book.errors.full_messages.each do |message| %><li><%= message %></li></ul>
         <% end %>
         </div>
     <% end %>
@@ -49,3 +46,4 @@
     <div class="action"><%= f.submit 'Create Book' %></div>
 
     <% end %>
+</body>
