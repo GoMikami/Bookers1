@@ -48,6 +48,10 @@ a:hover {
     background-color: #000;
 }
 
+.notice {
+    color: green;
+}
+
 th {
     padding-bottom: 5px;
 }
@@ -92,9 +96,18 @@ div.field,div.actions {
     color: #fff
 }
 
-#error_explanation ul li { font-size: 12px;
-list-style: square;
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
 }
+
+
 
 label {
     display: block;
+}
